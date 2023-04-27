@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title></title>
+	<style>td{font-size: 20px;
+	font-weight: bold;}</style>
+</head>
+<body>
+		<fieldset style="background-color:black;color: white; font-size: 20px; ">
+		<h2>Login Form</h2>
+		</fieldset>
+		
+				<fieldset style="background-color:powderblue;color: black;">
+				<form>
+				<table>
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" style="font-size: 20px;" id="fname" placeholder="Enter First Name..." required><br><br></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" style="font-size: 20px;"  id="lname" placeholder="Enter Last Name..."><br><br></td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td><input type="email" style="font-size: 20px;" id="email" name="email" placeholder="Enter E-mail......"><br><br></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" style="font-size: 20px;" id="passwd" placeholder="Enter Password......"><br><br></td>
+				</tr>
+				</form>
+				
+			</table>
+		
+		</fieldset>
+				<fieldset style="background-color:black;">
+
+					<input type="submit" value="Submit" name="submit" onclick="bhavi()" style="background-color: green; font-size: 20px;">
+					<input type="reset" value="Reset" style="background-color:red; font-size: 20px;">
+				</fieldset>
+
+
+				<script type="text/javascript">
+		function bhavi(){
+			var a=document.getElementById("fname").value;
+			var b=document.getElementById("lname").value;
+			var g=document.getElementById("email").value;
+			if(g=="")
+				alert("Email must not be blank!!");
+			var at=g.indexOf("@");
+			var dot=g.lastIndexOf(".");
+			if(dot<at+2 || at<1 || dot+2>g.length)
+				alert("Not a valid email!");
+			var i=document.getElementById("passwd").value;
+		}
+	</script>
+	
+</body>
+</html>

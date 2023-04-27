@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>td{font-size: 20px;
+	font-weight: bold;}</style>
+</head>
+<body>
+		<fieldset style="background-color:black;color: white; font-size: 20px; ">
+		<h2>Registration Form</h2>
+		</fieldset>
+		
+				<fieldset style="background-color:powderblue;color: black;">
+				<form>
+				<table>
+				<tr>
+					<td>First Name</td>
+					<td><input type="text" style="font-size: 20px;" id="fname" placeholder="Enter First Name..." required><br><br></td>
+				</tr>
+				<tr>
+					<td>Last Name</td>
+					<td><input type="text" style="font-size: 20px;"  id="lname" placeholder="Enter Last Name..."><br><br></td>
+				</tr>
+				<tr>
+					<td>Date of Birth</td>
+					<td><input type="date" style="font-size: 20px;"  id="date"><br><br></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td><input type="radio" style="font-size: 20px;" id="m" value="male" name="gender">Male
+					<input type="radio" id="m" value="female" name="gender">Female
+					<br><br></td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td><input type="email" style="font-size: 20px;" id="email" name="email" placeholder="Enter E-mail......"><br><br></td>
+				</tr>
+				<tr>
+					<td>Phone</td>
+					<td><input type="tel" style="font-size: 20px;"  id="tel" placeholder="Enter Phone......" pattern="[0-9]{10}"><br><br></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" style="font-size: 20px;" id="passwd" placeholder="Enter Password......"><br><br></td>
+				</tr>
+				<tr>
+					<td>Confirm Password</td>
+					<td><input type="password" style="font-size: 20px;" id="cpasswd" placeholder="Re-enter Password......"><br><br></td>
+				</tr>
+				</form>
+				
+			</table>
+		
+		</fieldset>
+				<fieldset style="background-color:black;">
+
+					<input type="submit" value="Submit" name="submit" onclick="bhavi()" style="background-color: green; font-size: 20px;">
+					<input type="reset" value="Reset" name="reset" style="background-color:red; font-size: 20px;">
+				</fieldset>
+
+	<p id="a1"></p>
+	<p id="a2"></p>
+	<p id="a4"></p>
+	<p id="a5"></p>
+	<p id="a7"></p>
+	<p id="a8"></p>
+	<p id="a9"></p>
+	<p id="a10"></p>
+
+				<script type="text/javascript">
+		function bhavi(){
+			var a=document.getElementById("fname").value;
+			var b=document.getElementById("lname").value;
+			var d=document.getElementById("date").value;
+			var e=document.getElementById("m").value;
+			var g=document.getElementById("email").value;
+			if(g=="")
+				alert("Email must not be blank!!");
+			var at=g.indexOf("@");
+			var dot=g.lastIndexOf(".");
+			if(dot<at+2 || at<1 || dot+2>g.length)
+				alert("Not a valid email!");
+			var h=document.getElementById("tel").value;
+			var i=document.getElementById("passwd").value;
+			var j=document.getElementById("cpasswd").value;
+			if(i != j)
+				alert("Passwords do not matches");
+
+			document.getElementById("a1").innerHTML="firstname " + a;
+			document.getElementById("a2").innerHTML="lastname " + b;
+			document.getElementById("a4").innerHTML="DOB " + d;
+			document.getElementById("a5").innerHTML="gender " + e;
+			document.getElementById("a7").innerHTML="email " + g;
+			document.getElementById("a8").innerHTML="phone " + h;
+			document.getElementById("a9").innerHTML="password " + i;
+			document.getElementById("a10").innerHTML="confirm password " + j;
+		}
+	</script>
+	
+</body>
+</html>
